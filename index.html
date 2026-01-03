@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aman 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;overflow:hidden}
+
+/* ================= PAGE SYSTEM ================= */
+.page{
+  position:absolute;
+  inset:0;
+  display:none;
+  padding:60px;
+overflow-y:auto;
+-webkit-overflow-scrolling:touch;
+}
+.page.active{display:flex}
+
+/* BUTTON */
+.button{
+  padding:12px 26px;
+  border:none;
+  border-radius:30px;
+  background:#ff7aa2;
+  color:#fff;
+  cursor:pointer;
+  font-size:1rem;
+}
+.button {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* ================= PAGE 1 ================= */
+#page1{
+  background:#fdecec;
+  justify-content:space-between;
+  align-items:center;
+}
+#page1::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(#f8caca 1px, transparent 1px),
+    linear-gradient(90deg,#f8caca 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:.4;
+}
+.left,.right{z-index:2}
+.left{max-width:45%}
+.right{text-align:center}
+
+h1{font-family:Pacifico;font-size:3.5rem;color:#333}
+h1 span{color:#ff7aa2}
+.date{
+  margin:15px 0;
+  padding:6px 18px;
+  background:#ff7aa2;
+  color:#fff;
+  border-radius:20px;
+  display:inline-block;
+}
+
+/* BALLOONS */
+.balloon{
+  position:absolute;
+  bottom:-120px;
+  width:40px;
+  height:55px;
+  background:#ff9bbd;
+  border-radius:50%;
+  animation:floatUp 10s linear infinite;
+}
+.balloon::after{
+  content:"";
+  position:absolute;
+  bottom:-25px;
+  left:50%;
+  width:2px;
+  height:30px;
+  background:#999;
+}
+@keyframes floatUp{to{transform:translateY(-130vh)}}
+
+/* LETTER */
+#letter{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:20;
+}
+#letter .card{
+  background:#ff8fb1;
+  color:#fff;
+  padding:30px;
+  border-radius:20px;
+  max-width:520px;
+}
+
+/* QUIZ */
+#quizGate{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:30;
+}
+
+/* ================= PAGE 2 ================= */
+#page2{
+  background:#0b1026;
+  color:#fff;
+  justify-content:center;
+  align-items:center;
+}
+.moon{
+  position:absolute;
+  top:40px;left:60px;
+  width:120px;height:120px;
+  background:#f5f3ce;
+  border-radius:50%;
+  box-shadow:0 0 30px rgba(255,255,200,.6);
+}
+.ground{
+  position:absolute;
+  bottom:120px;
+  left:10%;right:10%;
+  height:2px;background:#fff;opacity:.6;
+}
+.tree{
+  position:absolute;
+  bottom:120px;left:35%;
+  width:200px;height:350px;
+}
+.trunk{
+  position:absolute;
+  bottom:0;left:50%;
+  width:14px;height:0;
+  background:#ffb3c7;
+  border-radius:10px;
+  transform:translateX(-50%);
+  animation:growTrunk 2.5s forwards;
+}
+@keyframes growTrunk{to{height:220px}}
+
+.heart-leaves{
+  position:absolute;
+  top:0;left:-30px;
+  width:260px;height:260px;
+}
+.heart-leaves span{
+  position:absolute;
+  width:28px;height:28px;
+  background:radial-gradient(circle,#ff6fae,#ff2d7a);
+  transform:rotate(45deg) scale(.6);
+  opacity:0;
+}
+.heart-leaves span::before,
+.heart-leaves span::after{
+  content:"";
+  position:absolute;
+  width:28px;height:28px;
+  background:inherit;border-radius:50%;
+}
+.heart-leaves span::before{left:-14px}
+.heart-leaves span::after{top:-14px}
+
+.balloon-text{
+  position:absolute;
+  left:80%;
+  top:120px;
+  transform:translateX(-50%);
+
+  width:360px;          /* 👈 makes it vertical */
+  max-width:90%;
+  max-height:60vh;
+
+  padding:22px;
+  background:#fff;
+  color:#333;
+  border-radius:20px;
+
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+
+  line-height:1.6;
+  font-size:1rem;
+
+  
+}
+
+@keyframes float{50%{transform:translateY(-18px)}}
+
+/* ================= PAGE 3 ================= */
+#page3{
+  background:radial-gradient(circle,#ffdde1,#ee9ca7);
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+.cake-container{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+}
+
+.cake{
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("cake.jpg"); /* 👈 VERY IMPORTANT */
+  background-size: 300px 300px;
+  transition: transform 1s ease;
+}
+
+.cake-left{
+  left: 0;
+  background-position: left center;
+}
+
+.cake-right{
+  right: 0;
+  background-position: right center;
+}
+
+/* When cut */
+.cake-container.cut .cake-left{
+  transform: translateX(-40px);
+}
+
+.cake-container.cut .cake-right{
+  transform: translateX(40px);
+}
+
+/* ================= PAGE 4 ================= */
+#page4{
+  background:radial-gradient(circle at top,#2a2a4a,#0f172a);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* CHRISTMAS LIGHTS */
+.lights{
+  position:absolute;top:20px;width:100%;
+  display:flex;justify-content:space-evenly;
+}
+.bulb{
+  width:14px;height:14px;border-radius:50%;
+  box-shadow:0 0 12px currentColor;
+  animation:blink 1.4s infinite alternate;
+}
+.red{background:#ff4d6d;color:#ff4d6d}
+.yellow{background:#ffd166;color:#ffd166}
+.green{background:#4caf50;color:#4caf50}
+@keyframes blink{to{opacity:.3}}
+
+/* POSTCARDS */
+.postcard{
+  position:absolute;
+  width:180px;height:230px;
+  background:#fff;
+  border-radius:14px;
+  padding:10px;
+  cursor:pointer;
+  box-shadow:0 15px 30px rgba(0,0,0,.5);
+}
+.postcard img{
+  width:100%;height:100%;
+  object-fit:cover;border-radius:10px;
+}
+.pc1{top:140px;left:120px}
+.pc2{top:100px;right:180px}
+.pc3{bottom:160px;left:260px}
+.pc4{bottom:140px;right:260px}
+
+/* MEMORY */
+#memory{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:40;
+}
+.memory-card{
+  background:#ff8fb1;
+  color:#fff;
+  padding:30px;
+  border-radius:20px;
+}
+/* Make sure only Page 4 can position children */
+#page4{
+  position: relative;
+}
+
+/* Center postcard ONLY on Page 4 */
+#page4 .center-postcard{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 340px;
+  z-index: 5;
+}
+/* Fix Page 4 layout */
+#page4{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* Safety: hidden pages cannot block clicks */
+.page{
+  pointer-events: none;
+}
+.page.active{
+  pointer-events: auto;
+}
+
+
+/* ================= PAGE 5 (ONLY ADDITION) ================= */
+#page5{
+  background:linear-gradient(#cbefff,#fdfbff);
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.sun{
+  position:absolute;
+  top:40px;right:60px;
+  width:120px;height:120px;
+  background:#ffd93d;
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(255,217,61,.6);
+}
+.cloud{
+  position:absolute;
+  width:160px;height:60px;
+  background:#fff;
+  border-radius:50px;
+  animation:cloudMove 60s linear infinite;
+}
+.c1{top:140px;left:-200px}
+.c2{top:220px;left:-300px}
+@keyframes cloudMove{to{transform:translateX(140vw)}}
+
+.envelope{
+  width:300px;height:190px;
+  background:#ff9bbd;
+  position:relative;
+  cursor:pointer;
+  overflow: visible;
+}
+.env-flap{
+  position:absolute;
+  top:0;left:0;right:0;
+  height:95px;
+  background:#ff7aa2;
+  clip-path:polygon(0 0,50% 100%,100% 0);
+  transform-origin:top;
+  transition:.8s;
+}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+
+.letter5{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  
+  width: 90%;
+  max-width: 420px;
+  max-height: 70vh;
+
+
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+
+  line-height: 1.8;
+}
+.letter5{
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+.envelope.open .letter5{
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+@media (max-width: 480px){
+  .letter5{
+    font-size: 16px;
+    line-height: 1.9;
+    padding: 20px;
+  }
+}
+
+
+/* ======================
+   PAGE 5 – ENVELOPE FONT
+   ====================== */
+
+#page5 .letter5,
+#page5 .letter5 p,
+#page5 .letter5 h1,
+#page5 .letter5 h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #333;
+}
+max-height: 65vh;
+overflow-y: auto;
+box-sizing: border-box;
+#page5 .letter5 {
+  letter-spacing: 1px;
+}
+
+/* ================= QUIZ DESIGN ================= */
+
+#quizGate{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+#quizGate .card{
+  background:#fff;
+  padding:30px 25px;
+  border-radius:20px;
+  width:90%;
+  max-width:420px;
+  text-align:center;
+  animation:quizPop .4s ease;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+#quizGate p{
+  font-size:1.2rem;
+  font-weight:600;
+  color:#333;
+  margin-bottom:20px;
+}
+
+#quizGate .button{
+  display:block;
+  width:100%;
+  margin:12px 0;
+  padding:14px;
+  font-size:1rem;
+  border-radius:30px;
+  background:#ff7aa2;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  transition:.3s;
+}
+
+#quizGate .button:hover{
+  background:#ff4d88;
+  transform:scale(1.03);
+}
+
+#quizMsg{
+  margin-top:15px;
+  font-weight:600;
+  color:#ff4d6d;
+}
+
+@keyframes quizPop{
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+#cake img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.page::before,
+.page::after {
+  pointer-events: none;
+}
+.button {
+  position: relative;
+  z-index: 10;
+}
+.letter {
+  position: relative;
+  z-index: 10;
+}
+.page::before,
+.page::after {
+  pointer-events: none;
+}
+
+.button {
+  position: relative;
+  z-index: 10;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.page{
+  height: 100dvh;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <div class="left">
+    <h1>Happy <span>Birthday Meri Jaan</span></h1>
+    <div class="date">4 January</div>
+    <p>To the one who makes my days brighter,the one who makes me smile,to the one who made me the most happiest,to the one who got so close to me in just little time,to the one who is the best,the most beautiful,the cutest.     AMUN FATIMA 💖</p>
+    <button class="button" onclick="openLetter()">Pehle Yaha kuch hai 💌</button>
+    <button class="button" onclick="showQuiz()">Next →</button>
+  </div>
+  <div class="right">
+    <div style="
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+">
+  <img src="4.jpg" alt="Aman"
+       style="width:100%;height:100%;object-fit:cover;">
+</div>
+
+  </div>
+</div>
+
+<!-- LETTER -->
+<div id="letter">
+  <div class="card">
+    <p>Happy Birthday Aman 💖<br>You are deeply loved. Its your birthday enjoy this day to the fullest gham nahi lene,tension nahi leni,rona nahi hai,emotional nahi hona hai,kisi aur ke baare mai sochna nahi hai kyuki din tumhara hai sirf khud baare mai socho. Abh mai kya bolu shukriya mujhe aapka nahi Mr. Sajid Yousuf aur unki biwi ka karna chahiye jo unki wajah se mujhe meri khushiya mil gayi woh nahi hote tum kaise aati. Abh tumhara shukriya tum aayi meri zindagi mai jabhse tum aayi hona tabhse kasam se mai khush rehne laga hu tumhari wajah se mujhe lag raha hai jeene mai mazzza hai warna jabh tum nahi thi meri woh boring zindagi aur abhi hamai kitna hee time hua saath abhi toh yeh starting hee hai abhi boht uch hona hai aage aur abhi isme bhi aapke liye hai kuch pages abche yaha se bas yehi udhar idhar ki baatein aage ek jagah serious talk shuru hojayegi filhaal chalo aage badhte hai lekin haa sunlo parsu se puch rahit thi na kya kar rahe the busy ho kaam hai yeh kar raha tha. Jhoot nahi bolunga lekin phat gayi aur yeh banane mai mai pagal hogaya agar tumhe lagta hai chatgpt kiya hai toh usko alag boluga mai usne zyada pagal kiya woh bolunga mai aaisehee filhaal bhai bohat mehnat lagi mujhe credit toh lunga hee mai bhai mujhe abh tum 10 din 2x  pyaar dogi iske badle kyuki phat gayi meri baaki chalo aage chalte hai. MWAAHHHHH </p>
+    <button class="button" onclick="closeLetter()">Close</button>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quizGate">
+  <div class="card">
+    <p>Chalo batao ham donu mai se zyada pyaar kon karta hai?(khudka naam check karlena pehle)</p>
+    <button class="button" onclick="correct()">Uzair</button>
+    <button class="button" onclick="wrong()">Amun</button>
+    <p id="quizMsg"></p>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <div class="moon"></div>
+  <div class="ground"></div>
+  <div class="tree">
+    <div class="trunk"></div>
+    <div class="heart-leaves"></div>
+  </div>
+  <div class="balloon-text">To the most beautiful girl 💖.This page is dedicated to our understanding,touchwood.I still cant believe how lucky i am to have you in my life. The thing i cherish the most about us is the way we understand eachother it feels soo good,natural. I thank god every day,and i thank you too for making me feel truly special, for trusting me, for loving me the way you do. I dont have words to explain how grateful i feel to have you in my life. Just thinking about our texts,calls,the way we handle our misunderstandings makes me THEHAPPIEST. YOU WERE THE BEST,YOU ARE THE BEST,YOU WILL ALWAYS BE THE BEST.</div>
+  <button class="button" style="position:absolute;bottom:40px;right:40px" onclick="next()">Next →</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="cake-container">
+  <div class="cake cake-left"></div>
+  <div class="cake cake-right"></div>
+</div>
+
+<button class="button" onclick="cutCake()">Cut the Cake 🎂</button>
+
+<h2>Time to cut the cake yaaayy yaaayy. Pehle make a wish 🎉</h2>
+
+
+
+  <p id="cakeMsg"></p>
+  <button id="cakeNext" class="button" style="display:none" onclick="next()">Next →</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <div class="lights">
+    <span class="bulb red"></span>
+    <span class="bulb yellow"></span>
+    <span class="bulb green"></span>
+    <span class="bulb red"></span>
+  </div>
+<div class="postcard center-postcard">
+  <img src="center.jpg" alt="Center Memory">
+</div>
+
+<div class="postcard pc1" onclick="openMemory(1)">
+  <img src="5.jpg">
+</div>
+
+<div class="postcard pc2" onclick="openMemory(2)">
+  <img src="1.jpg">
+</div>
+
+<div class="postcard pc3" onclick="openMemory(3)">
+  <img src="3.jpg">
+</div>
+
+<div class="postcard pc4" onclick="openMemory(4)">
+  <img src="2.jpg">
+</div>
+
+
+  <button class="button" style="position:absolute;bottom:40px;right:40px" onclick="next()">Next →</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <div class="sun"></div>
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+
+  <div class="envelope" onclick="openEnvelope()">
+
+    <div class="env-flap"></div>
+    <div class="letter5">
+      <p>
+        My dearest Aman 💖<br><br>
+        You are my calm, my happiness, my forever.
+        Every heartbeat feels warmer because of you.You makee feel complete.Your love fills me with happiness,and being with you makes everything feel right.I love the way we talk ,the way we argue ,and most of all ,the way we always find our way back to eachother Having you by my side has changed me it has made me feel whole and transformed me into a better version of myself. Ever since you came into my life, I’ve felt a kind of happiness I had never experienced before. You showed me emotions I never knew existed.
+
+Aman, please always remain the wonderful person you are kind, strong, and beautiful in every way. You will always be deeply loved by me, and I hope you feel the same love in return. Never doubt yourself or think that you are not enough. You are more than enough—you are the best, and I hope you continue being exactly the amazing person you are.
+
+I may not be the best with words, and I know this isn’t perfect, but I wrote it from my heart because it’s your birthday. There may be flaws in these words, but there are none in my love for you.
+
+Thank you, Aman, for being such a precious and beautiful part of my life.
+
+And finally… HAPPIEST BIRTHDAY, MERI JAAN! MWAHHH 💕
+        <br><br>
+        Always yours ❤️
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="memory">
+  <div class="memory-card">
+    <p id="memoryText"></p>
+    <button class="button" onclick="closeMemory()">Close</button>
+  </div>
+</div>
+<audio id="bgMusic" src="song.mp3" loop></audio>
+<audio id="bgMusic" src="lastsong.mp3" loop></audio>
+
+<script>
+const pages=document.querySelectorAll('.page');
+let i=0;
+const bgMusic = document.getElementById('bgMusic');
+const envelopeMusic = document.getElementById('envelopeMusic');
+const envelope = document.querySelector('.envelope');
+
+
+function next(){
+  if (i + 1 >= pages.length) return;
+
+  pages[i].classList.remove('active');
+  i++;
+  pages[i].classList.add('active');
+
+  // Stop music after page 4
+  if (i > 3) {
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+  }
+}
+
+
+function openLetter(){
+  letter.style.display = 'flex';
+
+  // 🎵 Play music when letter opens
+  bgMusic.play().catch(()=>{});
+}
+
+function closeLetter(){letter.style.display='none'}
+
+function showQuiz(){quizGate.style.display='flex'}
+function correct(){quizGate.style.display='none';next()}
+function wrong(){quizMsg.innerText='bhai kitni baar bola mai karta hu zyada pyaar tumse huhh'}
+const cakeMsg = document.getElementById('cakeMsg');
+const cakeNext = document.getElementById('cakeNext');
+
+function cutCake(){
+  document.querySelector('.cake-container').classList.add('cut');
+
+  cakeMsg.innerText='🎉 Happy Birthday meri jaan khush raho,abaad raho,mai hamesha tumhare saath rahunga 💖(wish mai mujhe maanga?)';
+  cakeNext.style.display='inline-block';
+}
+
+const memories={
+  1:` This was the first time when I saw you ussi din laga the ki she's the one and chashma lagake kya baat hai wahh💖`,
+  2:`This is aapka struggle,love your bangs btw ❤️`,
+  3:`This will always be my favourite photo mashallah nazar naa lage bohat khubsurat ho aap isme tan nahi haina aapko eheheh😊`,
+  4:`Cutest of them all aapke baap ne ek masterpiece uthaya hai my new favourite jisko mai rooz subha aur raat ko stare karta rehta hu aur aur aur...... nahi nahi mwah cutie💕`
+};
+function openMemory(n){memoryText.innerText=memories[n];memory.style.display='flex'}
+function closeMemory(){memory.style.display='none'}
+
+function openEnvelope(){
+  const envelope = document.querySelector('.envelope');
+  envelope.classList.add('open');
+
+  const last = document.getElementById('envelopeMusic');
+
+  // ▶️ Play only if it is not already playing
+  if (last.paused) {
+    last.play().catch(()=>{});
+  }
+}
+
+
+
+
+
+
+/* HEART LEAVES */
+const box=document.querySelector('.heart-leaves');
+let pts=[];
+for(let t=0;t<Math.PI*2;t+=0.22){
+  for(let r=0.6;r<=1;r+=0.15){
+    const x=r*16*Math.sin(t)**3;
+    const y=r*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));
+    pts.push({x:130+x*4,y:120-y*4});
+  }
+}
+pts.sort(()=>Math.random()-0.5);
+pts.forEach((p,j)=>{
+  const s=document.createElement('span');
+  s.style.left=p.x+'px';s.style.top=p.y+'px';
+  s.style.animation=`fade .8s forwards ${2.5+j*.1}s`;
+  box.appendChild(s);
+});
+const st=document.createElement('style');
+st.innerHTML='@keyframes fade{to{opacity:1;transform:rotate(45deg) scale(1)}}';
+document.head.appendChild(st);
+
+/* BALLOONS */
+for(let b=0;b<6;b++){
+  const el=document.createElement('div');
+  el.className='balloon';
+  el.style.left=Math.random()*100+'vw';
+  el.style.animationDelay=Math.random()*5+'s';
+  document.body.appendChild(el);
+}
+</script>
+<audio id="bgMusic" src="song.mp3" loop></audio>
+<audio id="envelopeMusic" src="lastsong.mp3" loop></audio>
+
+
+</body>
+</html>
+
